@@ -19,6 +19,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category=" Character Data")
+	TObjectPtr<USkeletalMeshComponent>Weapon;
+	
+	UPROPERTY(BlueprintReadWrite,EditAnywhere,Category=" Character Data")
+	FName WeaponSocketName;
+
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;

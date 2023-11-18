@@ -9,6 +9,12 @@ ALightCharacterBase::ALightCharacterBase()
  	// Set this character to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	//Creating the Weapon mesh object
+	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon Mesh");
+	WeaponSocketName=FName("Weapon Socket");
+	Weapon->SetupAttachment(GetMesh(),WeaponSocketName);
+	Weapon->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+
 }
 
 // Called when the game starts or when spawned
